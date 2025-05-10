@@ -5,10 +5,19 @@ import Link from 'next/link';
 import styles from '../../../styles/BookSession.module.css';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
+import { Suspense } from 'react';
 
 const Calendar = dynamic(() => import('react-calendar'), { ssr: false });
 
 export default function SchedulePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ScheduleContent />
+    </Suspense>
+  );
+}
+
+function ScheduleContent() {
   const searchParams = useSearchParams();
   const title = searchParams.get('title');
 

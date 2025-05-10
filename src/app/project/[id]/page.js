@@ -3,6 +3,7 @@
 import { projects } from "../../../data/data";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 
@@ -29,7 +30,7 @@ export default function ProjectPage() {
   if (showFullImage) {
     return (
       <div className={styles.fullImageContainer} onClick={() => setShowFullImage(false)}>
-        <img src={project.image} alt={project.title} className={styles.fullImageOnly} />
+        <Image src={project.image} alt={project.title} width={500} height={300} className={styles.fullImageOnly} />
       </div>
     );
   }
@@ -38,11 +39,13 @@ export default function ProjectPage() {
     <div className={styles.projectPage}>
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{project.title}</h1>
-        <p className={styles.description}>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+        <p className={styles.description}>It&apos;s a project description.</p>
       </div>
-      <img
+      <Image
         src={project.image}
         alt={project.title}
+        width={500}
+        height={300}
         className={styles.fullImage}
         onClick={() => setShowFullImage(true)}
       />
