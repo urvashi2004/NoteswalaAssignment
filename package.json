@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^11.7.1",
     "next": "15.3.2",
+    "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-calendar": "^5.1.0",
     "react-dom": "^19.0.0",

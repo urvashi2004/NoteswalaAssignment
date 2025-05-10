@@ -28,8 +28,6 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
-  text-align: left;
-  width: 90vw;
 }
 
 .columns {
@@ -40,19 +38,19 @@
 
 .column {
   flex: 1;
-  border: 1px solid #ddd;
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .column h2 {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   margin-bottom: 1rem;
+  color: #222;
+  font-weight: lighter;
+  text-decoration: underline;
 }
 
 .column p {
-  font-size: 1rem;
+  font-size: 0.7rem;
   color: #444;
 }
 
@@ -62,6 +60,28 @@
   font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
+}
+
+.timeBoxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 2fr));
+  gap: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.timeBox {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #000;
+  font-size: 0.7rem;
+  background-color: #fff;
+  cursor: pointer;
+  color: #666;
+  transition: background-color 0.3s ease;
+}
+
+.timeBox:hover {
+  background-color: #EEF6F6;
 }
 
 .react-calendar {
@@ -124,4 +144,97 @@
   color: white !important;
   border-radius: 4px;
   box-shadow: inset 0 0 0 2px #EEF6F6;
+}
+
+.nextButton {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #59A8AB;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nextButton:hover {
+  background-color: #7B7B7B;
+  text-decoration: underline;
+}
+
+.bookNowButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #59A8AB;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bookNowButton:hover {
+  background-color: #4a8c8e;
+}
+
+.column form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+  background-color: fff;
+}
+
+.column form h3, .column h3{
+  font-size: 0.7rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+  font-weight: lighter;
+}
+
+.column p {
+  text-align: left;
+}
+
+.column form label {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.column form input, .column form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: #444;
+  background-color: #fff;
+  border: 1px solid #666;
+}
+
+.column form textarea {
+  resize: none;
+}
+
+.lineBreak {
+  margin: 1rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.sectionBreak {
+  width: 95%;
+  height: 0.5px;
+  background-color: #222; 
+  margin: 1rem 0;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.errorIcon {
+  margin-right: 0.5rem;
 }
