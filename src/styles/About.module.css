@@ -1,0 +1,201 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  color: #666;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.image {
+  height: auto;
+}
+
+.textContainer {
+  margin: 3rem 0;
+  font-family: "Poppins", sans-serif;
+  color: #666;
+  text-align: center;
+}
+
+.textContainer h1 {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: lighter;
+  letter-spacing: 0.2rem;
+}
+
+.textContainer p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.sectionBreak {
+  width: 95vw;
+  height: 0.5px;
+  background-color: #222; /* Changed to background-color to make it appear as a solid line */
+}
+
+.awardsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 60%;
+}
+
+.awardsContainer h2 {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  font-weight: lighter;
+  letter-spacing: 0.1rem;
+}
+
+.awardsContainer ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0.75rem;
+}
+
+.contactContainer {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.lineBreak {
+  width: 5vw;
+  height: 0.5px;
+  background-color: #222;
+  margin: 1rem 0;
+}
+
+.contactContainer h2 {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-weight: lighter;
+  letter-spacing: 0.1rem;
+}
+
+.contactContainer p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.icon {
+  color: #fff; /* Icon color */
+  background-color: #222; /* Circular background */
+  border-radius: 50%; /* Make the background circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem; /* Adjust padding as needed */
+  width: 1.2rem; /* Adjust size as needed */
+  height: 1.2rem; 
+}
+
+.contactForm {
+  width: 90vw;
+  padding: 1.5rem;
+}
+
+.contactForm form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%; /* Added gap between fields */
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+  width: 48%; /* Adjusted width to 50% minus gap */
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #555;
+  font-size: 0.7rem;
+  color: #333;
+  border-radius: 0; /* Removed border radius */
+  background-color: transparent; /* Removed background color */
+}
+
+.formGroup input:hover,
+.formGroup textarea:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+.formGroup textarea {
+  width: 82vw !important; /* Force message box to span full width */
+  resize: vertical;
+}
+
+/* Override .formGroup width for textarea */
+.formGroup.textareaGroup {
+  width: 100%; /* Ensure textarea spans full width */
+}
+
+.submitButton {
+  width: 100%; /* Ensure submit button spans full width */
+  display: block;
+  padding: 0.8rem 1.5rem;
+  color: #fff;
+  border: #333 solid 1px;
+  background-color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #fff;
+  color: #333
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  display: block; /* Ensure error messages are visible */
+}
+
+.errorIcon {
+  margin-right: 0.5rem;
+  color: red;
+  vertical-align: middle;
+}

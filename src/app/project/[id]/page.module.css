@@ -1,0 +1,81 @@
+.projectPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #444;
+  margin-top: 3rem;
+}
+
+.title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-align: left;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  flex: 1;
+  font-size: 0.7rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.fullImage {
+  width: 90vw;
+  height: auto;
+  margin-bottom: 2rem;
+  transition: ease 0.5s filter;
+}
+
+.fullImage:hover {
+  filter: brightness(0.8); /* Darkens the image further on hover */
+}
+
+.fullImageContainer {
+  position: fixed; /* Ensure it covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for better visibility */
+  z-index: 100000; /* Ensure it is above all other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Disable scrolling */
+}
+
+.fullImageOnly {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure the image scales properly */
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  font-size: 0.7rem;
+  color: #666; /* Revert to original text color */
+  background-color: transparent; /* Remove circular background */
+  border-radius: 5px; /* Revert to original border radius */
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}

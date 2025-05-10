@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid #ddd;
+}
+
+.image {
+  flex: 1;
+  height: 100%;
+  width: 50%;
+  aspect-ratio: 1.75;
+}
+
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.text h2 {
+  font-size: 1rem;
+  font-family: Poppins, sans-serif;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.text p {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.bookNow {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #59A8AB;
+  color: white;
+  border: none;
+  width: 50%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.bookNow:hover {
+  background-color: #59A8AB;
+}

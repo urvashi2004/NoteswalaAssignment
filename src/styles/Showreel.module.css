@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  width: 100vw;
+}
+
+.container iframe {
+  width: 100%; /* Set iframe width to 100% of the viewport width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.videoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw !important; /* Force the wrapper to span 90% of the viewport width */
+  max-width: 90vw !important; /* Ensure no inherited max-width overrides this */
+  height: calc(90vw * 9 / 16) !important; /* Set height based on 16:9 aspect ratio */
+  overflow: hidden; /* Ensure no overflow issues */
+}
+
+.video {
+  width: 100% !important; /* Ensure the iframe takes the full width of the wrapper */
+  height: 100% !important; /* Match the height of the wrapper */
+  max-width: none !important; /* Override any inherited max-width */
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  font-family: Poppins, sans-serif;
+}
+
+.left {
+  flex: 1;
+  padding-right: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.left h1 {
+  font-size: 0.8rem;
+  margin: 1rem 0;
+  color: #666;
+  font-weight: lighter;
+}
+
+.left p {
+  font-size: 0.7rem;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.right {
+  flex: 1;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.right p {
+  font-size: 0.7rem;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.sectionBreak {
+  width: 90vw;
+  height: 0.5px;
+  background-color: #222;
+  margin: 1rem 0;
+}
