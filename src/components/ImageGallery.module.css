@@ -15,10 +15,11 @@
   display: block;
   filter: brightness(0.7);
   margin: auto;
+  max-width: 750px;
 }
 
 .galleryImage:hover {
-  filter: brightness(0.5); /* Darkens the image further on hover */
+  filter: brightness(0.5);
 }
 
 .imageTitle {

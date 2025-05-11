@@ -17,6 +17,8 @@ if (typeof window !== "undefined") {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   };
 
+  console.log("Firebase Config:", firebaseConfig); // ⬅️ Add this
+
   app = initializeApp(firebaseConfig);
   isSupported().then((supported) => {
     if (supported) {
