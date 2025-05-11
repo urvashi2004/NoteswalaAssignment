@@ -6,8 +6,17 @@ import styles from '../../../../styles/BookSession.module.css';
 import { FaExclamationCircle } from 'react-icons/fa';
 import { saveBookingDetails } from '../../../../firebaseConfig';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 export default function BookingFormPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingFormContent />
+    </Suspense>
+  );
+}
+
+function BookingFormContent() {
   const searchParams = useSearchParams();
 
   const serviceDetails = {
