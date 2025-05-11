@@ -33,6 +33,7 @@
 
 .headerImage {
   width: 100vw;
+  max-height: 400px;
   height: auto;
   display: block;
 }
