@@ -1,0 +1,34 @@
+/* Styling for the time slots container */
+.timeSlotsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Styling for individual time slots */
+.timeSlot {
+  border: 1px solid #666;
+  color: #666;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  flex: 1 1 calc(40% - 10px);
+  box-sizing: border-box;
+}
+
+/* Highlight selected time slot */
+.timeSlot.selected {
+  background-color: #666;
+  color: #fff;
+}
+
+/* Styling for the Next button */
+.nextButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #59A8AB;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}

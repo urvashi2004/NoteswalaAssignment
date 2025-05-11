@@ -2,11 +2,27 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from '../../../styles/BookSession.module.css';
+import styles from '../../../../styles/BookSession.module.css';
 import { FaExclamationCircle } from 'react-icons/fa';
-import { saveBookingDetails } from '../../../firebaseConfig';
+import { saveBookingDetails } from '../../../../firebaseConfig';
+import { useSearchParams } from 'next/navigation';
 
-export default function BookingForm({ serviceDetails }) {
+export default function BookingFormPage() {
+  const searchParams = useSearchParams();
+
+  const serviceDetails = {
+    service: searchParams.get('service'),
+    date: searchParams.get('date'),
+    time: searchParams.get('time'),
+    staff: searchParams.get('staff') || 'Not specified',
+    duration: searchParams.get('duration') || 'Not specified',
+    meeting: searchParams.get('meeting') || 'Not specified',
+  };
+
+  return <BookingForm serviceDetails={serviceDetails} />;
+}
+
+function BookingForm({ serviceDetails }) {
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     firstName: '',

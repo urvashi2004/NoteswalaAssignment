@@ -22,9 +22,14 @@ function ScheduleContent() {
   const title = searchParams.get('title');
 
   const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
 
   const handleDayClick = (day) => {
     setSelectedDay(day);
+  };
+
+  const handleTimeSlotClick = (time) => {
+    setSelectedTime(time);
   };
 
   const getTimeSlots = () => {
@@ -52,15 +57,45 @@ function ScheduleContent() {
         </div>
         <div className={styles.column}>
           <h2>Choose a Time</h2>
-          <select className={styles.timeSelect}>
+          <div className={styles.timeBoxes}>
             {getTimeSlots().map((slot, index) => (
-              <option key={index} value={slot}>{slot}</option>
+              <div
+                key={index}
+                className={`${styles.timeBox} ${selectedTime === slot ? styles.selected : ''}`}
+                onClick={() => handleTimeSlotClick(slot)}
+              >
+                {slot}
+              </div>
             ))}
-          </select>
+          </div>
         </div>
         <div className={styles.column}>
           <h2>Details</h2>
           <p>Service: {title}</p>
+          <p>Date: {selectedDay ? new Date(selectedDay).toLocaleDateString() : 'Not selected'}</p>
+          <p>Time: {selectedTime || 'Not selected'}</p>
+          <div className={styles.staffDetails}>
+            <p>Staff Member #1</p>
+            <p>1 hour</p>
+            <p>Creative Meeting</p>
+          </div>
+          <button
+            className={styles.nextButton}
+            onClick={() => {
+              if (selectedDay && selectedTime) {
+                const queryParams = new URLSearchParams({
+                  date: selectedDay.toISOString(),
+                  time: selectedTime,
+                  service: title,
+                }).toString();
+                window.location.href = `/book/schedule/bookingForm?${queryParams}`;
+              } else {
+                alert('Please select a date and time before proceeding.');
+              }
+            }}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>

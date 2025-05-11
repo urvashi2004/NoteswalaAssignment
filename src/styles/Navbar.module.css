@@ -16,11 +16,23 @@
 .logo {
   font-size: 0.8rem;
   letter-spacing: 0.2rem;
+  margin: 1rem 0;
+  width: 30%;
+}
+
+.links {
+  display: none;
+  flex-direction: column; /* Set flex direction to column for smaller screens */
+  gap: 1rem;
+  width: 100%;
+}
+
+.links.showMenu {
+  display: flex;
 }
 
 .links a {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 1rem;
   text-decoration: none;
   color: #686868; /* Inactive link color */
   font-weight: 500;
@@ -31,13 +43,9 @@
   color: #222222; /* Active link color */
 }
 
-.links {
-  display: flex;
-  gap: 1.5rem;
-}
-
 .auth {
   display: flex;
+  width: 20%;
   align-items: center;
   gap: 0.5rem;
   font-weight: 500;
@@ -55,6 +63,12 @@
   height: 1.2rem; /* Adjust size as needed */
 }
 
+.auth .menuToggle {
+  background-color: #fff;
+  color: #222;
+  border: none;
+  margin-right: 1rem;
+}
 
 .navButton {
   color: #686868; /* Default link color */
@@ -64,4 +78,36 @@
 
 .navButton.active {
   color: #222222; 
+}
+
+@media (min-width: 701px) {
+  .menuToggle {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo {
+    width: 50%;
+  }
+
+  .links {
+    display: none; /* Hide navigation links */
+    flex-direction: column; /* Set flex direction to column for smaller screens */
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .auth {
+    justify-content: center; /* Center the login icon */
+    gap: 0; /* Remove gap to only show the icon */
+  }
+
+  .auth svg {
+    display: block; /* Ensure the login icon is visible */
+  }
+
+  .auth a {
+    display: none; /* Hide the login text */
+  }
 }
