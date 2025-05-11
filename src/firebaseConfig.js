@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { GoogleAuthProvider, signInWithPopup, signInAnonymously, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -21,6 +22,53 @@ const analytics = getAnalytics(app);
 // Initialize Firebase services
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
+// Google provider setup
+export const googleProvider = new GoogleAuthProvider();
+
+// Function to sign in with Google
+export const signInWithGoogle = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    return result.user;
+  } catch (error) {
+    console.error("Error signing in with Google:", error);
+    throw error;
+  }
+};
+
+// Function to sign in anonymously
+export const signInAnonymouslyHandler = async () => {
+  try {
+    const result = await signInAnonymously(auth);
+    return result.user;
+  } catch (error) {
+    console.error("Error signing in anonymously:", error);
+    throw error;
+  }
+};
+
+// Function to sign up with email and password
+export const signUpWithEmail = async (email, password) => {
+  try {
+    const result = await createUserWithEmailAndPassword(auth, email, password);
+    return result.user;
+  } catch (error) {
+    console.error("Error signing up with email:", error);
+    throw error;
+  }
+};
+
+// Function to log in with email and password
+export const logInWithEmail = async (email, password) => {
+  try {
+    const result = await signInWithEmailAndPassword(auth, email, password);
+    return result.user;
+  } catch (error) {
+    console.error("Error logging in with email:", error);
+    throw error;
+  }
+};
 
 // Function to validate booking data before saving
 const validateBookingData = (bookingData) => {
